@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+
+        <h2 class="text-center fw-bold mb-4">All Services</h2>
+
+        <!-- Search Bar -->
+        <form method="GET" class="mb-4 text-center">
+            <input type="text" name="q" placeholder="Search service..."
+                   class="form-control w-50 d-inline-block">
+            <button type="submit" class="btn explore-btn ms-2">
+                Search
+            </button>
+        </form>
+
+        <div class="row">
+            {% for service in services %}
+            <div class="col-lg-4 col-md-6 col-6 mb-4">
+                <div class="card service-card h-100">
+
+                    {% if service.image %}
+                    <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.name }}">
+                    {% endif %}
+
+                    <div class="card-body text-center d-flex flex-column">
+
+                        <h6 class="fw-bold">{{ service.name }}</h6>
+
+                        <p class="small text-muted">
+                            {{ service.description|truncatewords:15 }}
+                        </p>
+
+                        <div class="price">
+    <small>Starting from</small>
+    ₹{{ service.starting_price }}
+</div>
+
+                        <!-- WhatsApp Enquire Button -->
+                        <a href="https://wa.me/917022041777?text=Hello%20LapTouch%0A%0AService:%20{{ service.name }}%0AStarting%20Price:%20₹{{ service.starting_price }}%0A%0APlease%20share%20more%20details."
+                           class="btn enquire-btn mt-auto"
+                           target="_blank">
+                           Enquire Now
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+            {% empty %}
+            <p class="text-center">No services found.</p>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+{% endblock %}

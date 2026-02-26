@@ -1,0 +1,400 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+/* ================= HERO ================= */
+.about-hero {
+    background: linear-gradient(135deg, #0f0f12 0%, #1e1e2f 100%);
+    padding: 110px 0;
+    text-align: center;
+    color: white;
+}
+
+.about-hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.brand-blue { color: #1e90ff; }
+.brand-red { color: #ff2c2c; }
+
+.about-hero p {
+    max-width: 700px;
+    margin: 20px auto;
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* ================= SECTIONS ================= */
+.section-padding {
+    padding: 80px 0;
+}
+
+/* ================= CARDS ================= */
+.power-card {
+    border: none;
+    border-radius: 15px;
+    padding: 35px;
+    background: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
+}
+
+.power-card:hover {
+    transform: translateY(-8px);
+}
+
+/* ================= DARK STRIP ================= */
+.dark-strip {
+    background: #0f0f12;
+    color: white;
+    padding: 70px 0;
+}
+
+.counter {
+    font-size: 40px;
+    font-weight: 700;
+    color: #ff2c2c;
+}
+
+/* ================= TIMELINE ================= */
+.timeline-step {
+    padding: 20px;
+    border-left: 4px solid #1e90ff;
+    margin-bottom: 25px;
+}
+
+.timeline-step h6 {
+    font-weight: 700;
+}
+
+/* ================= CTA ================= */
+.cta-box {
+    background: linear-gradient(45deg, #1e90ff, #ff2c2c);
+    color: white;
+    padding: 60px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.cta-btn {
+    background: white;
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #000;
+    color: white;
+}
+.lead-text {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.story-highlight {
+    margin-top: 20px;
+    padding: 15px 20px;
+    border-left: 4px solid #ff2c2c;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.work-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-8px);
+}
+
+.step-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e90ff;
+    margin-bottom: 10px;
+}
+/* ================= OUR EXPERTISE SECTION ================= */
+
+.power-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 35px 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Top Accent Line */
+.power-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #1e90ff, #ff2c2c);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+}
+
+/* Hover Effect */
+.power-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+}
+
+.power-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Title Styling */
+.power-card h5 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* Description */
+.power-card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ================= SPECIAL MAC CARD STYLE ================= */
+
+/* Add this class to Mac card: class="power-card mac-card" */
+
+.mac-card {
+    border: 2px solid #f0f0f0;
+}
+
+.mac-card:hover {
+    border: 2px solid #000;
+    background: #f8f8f8;
+}
+
+/* Optional Apple-style glow */
+.mac-card:hover {
+    box-shadow: 0 25px 70px rgba(0,0,0,0.18);
+}
+
+/* Section Title */
+.section-padding h2 {
+    font-weight: 800;
+    font-size: 34px;
+    margin-bottom: 50px;
+}
+</style>
+
+<!-- ================= HERO ================= -->
+
+<section class="about-hero">
+    <div class="container">
+        <h1>
+           About <span class="brand-blue">Lap</span><span class="brand-red">Touch</span>
+        </h1>
+        <p>
+            At <strong>LapTouch</strong>, we don't just repair laptops — 
+            we restore performance, protect your data, and extend the life of your technology.
+            Trusted by hundreds of customers across Mangalore.
+        </p>
+    </div>
+</section>
+
+<!-- ================= BRAND STORY ================= -->
+
+<!-- ================= OUR STORY PREMIUM ================= -->
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- Left Content -->
+            <div class="col-lg-6">
+                <h2 class="mb-4">
+                    The Journey of 
+                    <span class="brand-blue">Lap</span><span class="brand-red">Touch</span>
+                </h2>
+
+                <p class="lead-text">
+                    What started as a small technical service initiative has now
+                    grown into a trusted laptop repair and MacBook servicing center in Mangalore.
+                </p>
+
+                <p>
+                    We built LapTouch on three core values — 
+                    <strong>Precision, Transparency, and Trust.</strong>  
+                    Every repair is done with attention to detail and proper diagnostics.
+                </p>
+
+                <p>
+                    From Windows laptops to advanced Apple MacBook logic board repairs,
+                    we continuously upgrade our tools and skills to match modern technology.
+                </p>
+
+                <!-- Highlight Box -->
+                <div class="story-highlight">
+                    💡 “We don’t just repair devices — we restore performance and confidence.”
+                </div>
+            </div>
+
+            <!-- Right Image -->
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
+                     class="img-fluid rounded-4 shadow-lg">
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ================= COUNTERS ================= -->
+
+<section class="dark-strip text-center">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="counter">1000+</div>
+                <p>Laptops Repaired</p>
+            </div>
+
+            <div class="col-md-3">
+                <div class="counter">500+</div>
+                <p>Happy Clients</p>
+            </div>
+
+            <div class="col-md-3">
+                <div class="counter">5+</div>
+                <p>Years Experience</p>
+            </div>
+
+            <div class="col-md-3">
+                <div class="counter">100%</div>
+                <p>Customer Satisfaction</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= EXPERTISE ================= -->
+
+<!-- ================= OUR EXPERTISE ================= -->
+
+<section class="section-padding">
+    <div class="container text-center">
+        <h2 class="mb-5">Our Technical Expertise</h2>
+
+        <div class="row">
+
+            <!-- Windows Repair -->
+            <div class="col-md-4 mb-4">
+                <div class="power-card">
+                    <h5>Windows Laptop Repair</h5>
+                    <p>
+                        Motherboard repair, SSD upgrade, RAM replacement,
+                        display issues, and full system optimization.
+                    </p>
+                </div>
+            </div>
+
+       <div class="col-md-4 mb-4">
+    <div class="power-card mac-card">
+        <h5>Apple MacBook Repair 🍎</h5>
+        <p>
+            Logic board repair, water damage recovery,
+            macOS reinstall, SSD upgrade, battery & keyboard replacement.
+        </p>
+    </div>
+</div>
+
+            <!-- Data Recovery -->
+            <div class="col-md-4 mb-4">
+                <div class="power-card">
+                    <h5>Advanced Data Recovery</h5>
+                    <p>
+                        Secure recovery from corrupted HDD/SSD,
+                        formatted drives, and crashed operating systems.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ================= PROCESS ================= -->
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="bg-light section-padding">
+    <div class="container text-center">
+        <h2 class="mb-5">How We Works</h2>
+
+        <div class="row">
+
+            <div class="col-md-3 mb-4">
+                <div class="work-card">
+                    <div class="step-number">01</div>
+                    <h6>Device Check-In</h6>
+                    <p>We inspect your laptop or MacBook with advanced diagnostics tools.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="work-card">
+                    <div class="step-number">02</div>
+                    <h6>Transparent Quotation</h6>
+                    <p>Clear explanation of issue and cost before starting repair.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="work-card">
+                    <div class="step-number">03</div>
+                    <h6>Precision Repair</h6>
+                    <p>Chip-level and component-level repair using professional tools.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="work-card">
+                    <div class="step-number">04</div>
+                    <h6>Quality Testing</h6>
+                    <p>Full performance testing before safe delivery to you.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ================= CTA ================= -->
+
+<section class="section-padding">
+    <div class="container">
+        <div class="cta-box">
+            <h3>Experience Reliable Laptop Solutions Today</h3>
+            <p class="mt-3">
+                Let LapTouch restore your device performance with trusted expertise.
+            </p>
+            <a href="{% url 'contact' %}" class="cta-btn mt-3 d-inline-block">
+                Get In Touch
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

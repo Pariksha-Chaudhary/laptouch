@@ -1,0 +1,214 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LapTouch - Laptop Repair Experts</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- TOP HEADER -->
+    <div class="top-bar">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <!-- LEFT CONTACT -->
+            <div class="top-contact">
+                <i class="fa fa-phone"></i> +91 7022041777
+                &nbsp; | &nbsp;
+                <i class="fa fa-envelope"></i> laptouch2022@gmail.com
+            </div>
+
+            <!-- RIGHT SEARCH -->
+            <div class="top-search">
+                <form class="d-flex">
+                    <input class="form-control search-top" type="search" placeholder="Search services...">
+                    <button class="btn btn-search">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
+        <div class="container">
+
+            <!-- LOGO -->
+
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="{% static 'images/laptouch.png' %}" class="navbar-logo">
+            </a>
+
+            <!-- MOBILE TOGGLE -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- NAV LINKS -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/services">Our Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/laptops">Buy Laptop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/terms">Terms & Conditions</a></li>
+
+                    <li class="nav-item ms-3">
+                        <a href="{% url 'book_repair' %}" class="btn btn-danger btn-sm">
+                            Book Repair
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <!-- FOOTER -->
+    <!-- ================= MODERN FOOTER ================= -->
+    <footer class="footer-modern pt-5 pb-3">
+
+        <div class="container">
+            <div class="row">
+
+                <!-- Brand -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h4 class="brand-logo">
+                        <span class="brand-blue">Lap</span><span class="brand-red">Touch</span>
+                    </h4>
+
+                    <p class="footer-text">
+                        We provide quality refurbished laptops, reliable repairs,
+                        and professional data recovery services.
+                    </p>
+
+                    <!-- Social Icons -->
+                    <div class="social-icons mt-3">
+                        <a href="https://www.instagram.com/laptouch2022?igsh=OGFzMzNrb245aXRw"
+                            class="social-btn instagram"><i class="bi bi-instagram"></i></a>
+
+                        <a href="https://www.facebook.com/share/1CZfgrUH1g/" class="social-btn facebook"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="https://wa.me/917022041777" target="_blank" class="social-btn whatsapp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+
+                        <a href="mailto:laptouch2022@gmail.com" class="social-btn mail">
+                            <i class="bi bi-envelope-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h6 class="footer-heading">Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'all_laptops' %}">Laptops</a></li>
+
+                        <li><a href="{% url 'about' %}">About us</a></li>
+                        <li><a href="{% url 'terms' %}">Terms & Conditions</a></li>
+                        <li><a href="{% url 'review_page' %}">Reviews</a></li>
+                        <li><a href="{% url 'faq' %}">FAQs</a></li>
+
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h6 class="footer-heading">Our Services</h6>
+                    <ul class="footer-links">
+                        <li>Refurbished Laptops</li>
+                        <li>Data Recovery</li>
+                        <li>Laptop Repair</li>
+                        <li>RAM & SSD Upgrade</li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="footer-heading">Contact</h6>
+
+                    <!-- Address (Google Maps Link) -->
+                    <p class="footer-contact">
+                        📍
+                        <a href="https://www.google.com/maps/search/?api=1&query=DOOR+NO+4-8-732/19+Basement+Floor+Essel+Center+Kodialbail+Opp+Kori+Rotti+MG+Road+Mangalore+575003+India"
+                            target="_blank">
+                            DOOR NO 4-8-732/19,<br>
+                            Basement Floor, Essel Center,<br>
+                            Kodialbail, Opp. Kori Rotti,<br>
+                            MG Road, Mangalore - 575003, India
+                        </a>
+                    </p>
+
+                    <!-- Phone Numbers -->
+                    <p class="footer-contact">
+                        📞
+                        <a href="tel:+917300837933">7300837933</a> |
+                        <a href="tel:+917022041777">7022041777</a>
+                    </p>
+
+                    <!-- Email -->
+                    <p class="footer-contact">
+                        ✉
+                        <a href="mailto:Laptouch2022@gmail.com">
+                            Laptouch2022@gmail.com
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="text-center footer-bottom">
+                © 2022 <span class="brand-blue">Lap</span><span class="brand-red">Touch</span>. All Rights Reserved.
+            </div>
+        </div>
+
+    </footer>
+    <!-- FLOATING WHATSAPP -->
+    <!-- <a href="https://wa.me/919876543210?text=Hello%20LapTouch"
+   class="whatsapp-float"
+   target="_blank">
+   <i class="fab fa-whatsapp"></i>
+</a> -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const slides = document.querySelectorAll(".slide");
+        let current = 0;
+
+        function changeSlide() {
+            slides[current].classList.remove("active");
+            current = (current + 1) % slides.length;
+            slides[current].classList.add("active");
+        }
+
+        setInterval(changeSlide, 1000); // Change every 4 seconds
+    </script>
+
+</body>
+
+</html>

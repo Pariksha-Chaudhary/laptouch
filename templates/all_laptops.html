@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="sell-laptops-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-4 section-title">All Available Laptops</h2>
+
+        <div class="row">
+            {% for laptop in laptops %}
+            <div class="col-lg-4 col-md-6 col-6 mb-4">
+                <div class="laptop-card">
+                    <img src="{{ laptop.image.url }}" class="img-fluid laptop-img" alt="{{ laptop.name }}">
+
+                    <div class="p-3">
+                        <h5 class="laptop-title">{{ laptop.brand }} {{ laptop.name }}</h5>
+                        <p class="condition">{{ laptop.condition|title }}</p>
+                        <p class="price">₹ {{ laptop.price }}</p>
+                        <p>{{ laptop.specifications }}</p>
+
+                        <a href="https://wa.me/917022041777?text=Hi I am interested in {{ laptop.brand }} {{ laptop.name }}" 
+                           class="btn btn-buy mt-2" target="_blank">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

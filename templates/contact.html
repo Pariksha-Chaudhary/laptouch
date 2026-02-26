@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+/* ================= HERO ================= */
+
+.contact-hero {
+    background: linear-gradient(135deg, #1e90ff, #ff2c2c);
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+}
+
+.contact-hero h1 {
+    font-weight: 800;
+    font-size: 42px;
+}
+
+/* ================= SECTION ================= */
+
+.section-padding {
+    padding: 80px 0;
+}
+
+/* ================= FORM ================= */
+
+.contact-form {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+.contact-form input,
+.contact-form textarea {
+    border-radius: 10px;
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #1e90ff;
+    box-shadow: none;
+}
+
+/* ================= INFO CARD ================= */
+
+.contact-info {
+    background: #0f0f12;
+    color: white;
+    padding: 40px;
+    border-radius: 18px;
+}
+
+.contact-info h5 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.contact-info a {
+    color: #bbb;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+    transition: 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #1e90ff;
+}
+
+/* ================= BUTTON ================= */
+
+.contact-btn {
+    background: #ff2c2c;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: #1e90ff;
+}
+
+/* ================= MAP ================= */
+
+.map-section iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    border-radius: 20px;
+}
+
+</style>
+
+<!-- ================= HERO ================= -->
+
+<section class="contact-hero">
+    <div class="container">
+        <h1>Get In Touch With LapTouch</h1>
+        <p class="mt-3">We are here to solve your laptop & MacBook problems.</p>
+    </div>
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+
+            <!-- FORM -->
+            <div class="col-lg-7 mb-4">
+                <div class="contact-form">
+                    <h4 class="mb-4">Send Us a Message</h4>
+
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" name="phone" class="form-control" placeholder="Phone Number">
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea name="message" rows="5" class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+
+                      <button type="button" class="contact-btn" onclick="sendToWhatsApp()">
+    Send Message
+</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- INFO -->
+            <div class="col-lg-5 mb-4">
+                <div class="contact-info">
+                    <h5>Contact Information</h5>
+
+                    📍 DOOR NO 4-8-732/19,<br>
+                    Basement Floor, Essel Center,<br>
+                    Kodialbail, Opp. Kori Rotti,<br>
+                    MG Road, Mangalore - 575003, India
+                    <br><br>
+
+                    <a href="tel:+917300837933">📞 7300837933</a>
+                    <a href="tel:+917022041777">📞 7022041777</a>
+
+                    <a href="mailto:Laptouch2022@gmail.com">
+                        ✉ Laptouch2022@gmail.com
+                    </a>
+
+                    <a href="https://wa.me/917022041777" target="_blank">
+                        💬 WhatsApp Us
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= GOOGLE MAP ================= -->
+
+<section class="map-section section-padding">
+    <div class="container">
+        <iframe 
+        src="https://www.google.com/maps?q=MG+Road+Mangalore+575003&output=embed"
+        allowfullscreen>
+        </iframe>
+    </div>
+</section>
+<script>
+function sendToWhatsApp() {
+
+    let name = document.querySelector('input[name="name"]').value;
+    let email = document.querySelector('input[name="email"]').value;
+    let phone = document.querySelector('input[name="phone"]').value;
+    let message = document.querySelector('textarea[name="message"]').value;
+
+    let whatsappMessage =
+        "Hello LapTouch,%0A%0A" +
+        "Name: " + name + "%0A" +
+        "Email: " + email + "%0A" +
+        "Phone: " + phone + "%0A" +
+        "Message: " + message;
+
+    let whatsappURL = "https://wa.me/917022041777?text=" + whatsappMessage;
+
+    window.open(whatsappURL, "_blank");
+}
+</script>
+{% endblock %}

@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+/* ================= HERO ================= */
+
+.terms-hero {
+    background-color: black;
+    padding: 90px 0;
+    text-align: center;
+    color: white;
+}
+
+.terms-hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.terms-hero p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* ================= MAIN SECTION ================= */
+
+.section-padding {
+    padding: 90px 0;
+    background: #f8f9fa;
+}
+
+.terms-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    transition: 0.3s ease;
+}
+
+.terms-card:hover {
+    transform: translateY(-5px);
+}
+
+.terms-card h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.terms-card p {
+    color: #555;
+    line-height: 1.8;
+}
+
+/* ================= IMPORTANT HIGHLIGHT ================= */
+
+.important-box {
+    background: #ffe5e5;
+    border-left: 6px solid red;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.important-box p {
+    color: red;
+    font-weight: 600;
+}
+
+/* ================= WARNING TEXT ================= */
+
+.warning-text {
+    color: red;
+    font-weight: 700;
+}
+
+/* ================= FINAL NOTICE ================= */
+
+.final-notice {
+    background: black;
+    color: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+</style>
+
+<!-- ================= HERO ================= -->
+
+<section class="terms-hero">
+    <div class="container">
+        <h1>Terms & Conditions</h1>
+        <p>Please read carefully before using our repair services.</p>
+    </div>
+</section>
+
+<!-- ================= CONTENT ================= -->
+
+<section class="section-padding">
+<div class="container">
+
+    <!-- Service Agreement -->
+    <div class="terms-card">
+        <h4>1. Service Agreement</h4>
+        <p>
+            By submitting your device to <strong>LapTouch</strong>, you agree to allow 
+            our technicians to diagnose and repair your laptop or MacBook.
+        </p>
+
+        <div class="important-box">
+            <p>⚠ Final repair cost will only be confirmed after full diagnosis.</p>
+        </div>
+    </div>
+
+    <!-- Data Responsibility -->
+    <div class="terms-card">
+        <h4>2. Data Responsibility</h4>
+        <p>
+            Customers are strongly advised to back up all important data before repair.
+        </p>
+
+        <div class="important-box">
+            <p>🚨 LapTouch is NOT responsible for any data loss during repair process.</p>
+        </div>
+    </div>
+
+    <!-- Warranty Policy -->
+    <div class="terms-card">
+        <h4>3. Repair Warranty</h4>
+        <p>
+            Warranty applies only to replaced parts and specific repairs.
+        </p>
+
+        <p class="warning-text">
+            Physical damage, liquid damage, or tampering after delivery will void the warranty immediately.
+        </p>
+    </div>
+
+    <!-- Payment Policy -->
+    <div class="terms-card">
+        <h4>4. Payment Terms</h4>
+        <p>
+            Full payment must be completed before device delivery.
+        </p>
+
+        <div class="important-box">
+            <p>Uncollected devices after 30 days may attract storage charges.</p>
+        </div>
+    </div>
+
+    <!-- No Fix Policy -->
+    <div class="terms-card">
+        <h4>5. No Fix – No Charge Policy</h4>
+        <p>
+            If your device cannot be repaired, only diagnostic charges (if applicable) will apply.
+        </p>
+    </div>
+
+    <!-- Liability -->
+    <div class="terms-card">
+        <h4>6. Limitation of Liability</h4>
+        <p>
+            LapTouch shall not be liable for indirect, incidental, or consequential damages
+            arising from service delays or hardware failure.
+        </p>
+
+        <p class="warning-text">
+            We are not responsible for manufacturer defects or pre-existing issues.
+        </p>
+    </div>
+
+    <!-- Final Notice -->
+    <div class="final-notice">
+        <h5>By using our services, you acknowledge that you have read and agreed to these Terms & Conditions.</h5>
+    </div>
+
+</div>
+</section>
+
+{% endblock %}
